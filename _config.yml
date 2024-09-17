@@ -30,10 +30,12 @@ github_username:  ayoolaore
 avatar: https://avatars.githubusercontent.com/u/22386496?s=400&u=b1f7788e43961ee54fbf08b5c2be30b799e52c9c&v=4
 # Build settings
 theme: minima
-remote_theme: pages-themes/cayman@v0.2.0
+markdown: kramdown
+# remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.
