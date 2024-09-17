@@ -23,19 +23,21 @@ email: ayoola.njoku@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal blog. I write about software engineering, cloud computing, and other tech-related topics.
 domain: ayoolaore.github.io
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://ayoolanjoku.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ola_0re
 github_username:  ayoolaore
-avatar: https://avatars.githubusercontent.com/u/22386496?s=400&u=b1f7788e43961ee54fbf08b5c2be30b799e52c9c&v=4
+avatar: 'profile.PNG'
 # Build settings
-theme: minima
+theme: jekyll-theme-architect
+color_theme: dark  # auto, dark, light
 markdown: kramdown
-# remote_theme: pages-themes/cayman@v0.2.0
+# remote_theme: pages-themes/architect@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
   - jekyll-seo-tag
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
