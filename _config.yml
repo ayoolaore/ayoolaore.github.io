@@ -24,15 +24,25 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal blog. I write about software engineering, cloud computing, and other tech-related topics.
 domain: ayoolaore.github.io
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://ayoolanjoku.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ayoolaore.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ola_0re
 github_username:  ayoolaore
-avatar: 'profile.PNG'
+avatar: 'assets/images/profile.PNG'
+github: [metadata]
 # Build settings
-theme: jekyll-theme-architect
-color_theme: dark  # auto, dark, light
+# theme: jekyll-theme-minimal
+themee: jekyll-theme-slate
+color_theme: auto  # auto, dark, light
 markdown: kramdown
-# remote_theme: pages-themes/architect@v0.2.0
+remote_theme: pages-themes/slate@v0.2.0
+# Navigation
+# nav:
+#   - name: "Home"
+#     link: "/"
+#   - name: "About"
+#     link: "/about/"
+#   - name: "Blog"
+#     link: "/blog/"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
@@ -47,14 +57,14 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
