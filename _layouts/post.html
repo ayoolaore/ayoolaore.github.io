@@ -40,12 +40,20 @@
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p>Ayoola N</a></p>
-      </footer>
-    </div>
+        <footer class="inner">
+          {% if site.github.is_project_page %}
+          <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+          {% endif %}
+          <p>Ayoola N</p> 
+          <p>
+              <a href="https://github.com/{{site.github_username}}" target="_blank">
+                <img src="{{ '/assets/images/github-mark.svg' | relative_url }}" alt="GitHub" style="width: 24px; height: 24px;">
+              </a>
+              <a href="https://twitter.com/{{twitter-username}}" target="_blank">
+                <img src="{{ '/assets/images/twitter-logo.svg' | relative_url }}" alt="Twitter" style="width: 24px; height: 24px;">
+              </a>
+            </p>
+        </footer>
+      </div>
   </body>
 </html>
