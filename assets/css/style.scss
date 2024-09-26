@@ -1,0 +1,35 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+
+#main_nav {
+    margin-top: 20px;
+  }
+  
+  #main_nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  #main_nav ul li {
+    display: inline;
+  }
+  
+  #main_nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  #main_nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+#footer_wrap .inner p a img {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
