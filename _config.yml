@@ -23,9 +23,9 @@ email: ayoola.njoku@outlook.com
 role: Systems Engineer
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal blog. I write about software engineering, cloud computing, and other tech-related topics.
-domain: ayoolaore.github.io
+domain: ayoolanjoku.io
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://ayoolaore.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ayoolanjoku.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ola_0re
 github_username:  ayoolaore
 avatar: 'assets/images/profile.PNG'
