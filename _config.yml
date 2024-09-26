@@ -31,10 +31,10 @@ avatar: 'assets/images/profile.PNG'
 github: [metadata]
 # Build settings
 # theme: jekyll-theme-minimal
-themee: jekyll-theme-slate
+theme: jekyll-theme-slate
 color_theme: auto  # auto, dark, light
 markdown: kramdown
-remote_theme: pages-themes/slate@v0.2.0
+# remote_theme: pages-themes/slate@v0.2.0
 # Navigation
 # nav:
 #   - name: "Home"

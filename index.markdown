@@ -4,6 +4,8 @@
 layout: home
 title: Work history
 ---
+
+{{site.avatar}}
 [POSTS](/_posts/2024-09-16-welcome-to-jekyll.markdown)
 #### DevOps Engineer (Harvard Unversity) : 
     • Boston, MA- Building a modernized learning experience to be used by Harvard and
