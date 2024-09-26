@@ -19,17 +19,18 @@
           {% if site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
           {% endif %}
-          <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <!-- <li><a href="/contact">Contact</a></li> -->
-            </ul>
+          <h1 id="project_title"> 
+            <img src="{{ site.avatar | relative_url }}" alt="{{ site.title | default: site.github.repository_name }}" >
+            {{ site.title | default: site.github.repository_name }}   </h1>
+          <!-- <h3 id="project_tagline">{{ site.role | default: site.github.project_tagline }}</h3> -->
+          <h3 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h3>
+          
+            <nav id="main_nav">
+                <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="{{ '/about' | relative_url }}">About</a></li>
+                </ul>
             </nav>
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <img src="{{ site.avatar | relative_url }}" alt="{{ site.title | default: site.github.repository_name }}" >
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-
           {% if site.show_downloads %}
             <section id="downloads">
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
@@ -52,7 +53,15 @@
         {% if site.github.is_project_page %}
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p>Ayoola N</a></p>
+        <p>Ayoola N</p> 
+        <p>
+            <a href="https://github.com/{{site.github_username}}" target="_blank">
+              <img src="{{ '/assets/images/github-mark.svg' | relative_url }}" alt="GitHub" style="width: 24px; height: 24px;">
+            </a>
+            <a href="https://twitter.com/{{twitter-username}}" target="_blank">
+              <img src="{{ '/assets/images/twitter-logo.svg' | relative_url }}" alt="Twitter" style="width: 24px; height: 24px;">
+            </a>
+          </p>
       </footer>
     </div>
   </body>
