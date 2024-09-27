@@ -8,6 +8,6 @@ permalink: /posts/
 
 [Latest Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
 
-[Some Architecture Post Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
+[Some Architecture Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
 
 [Some System Design Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
