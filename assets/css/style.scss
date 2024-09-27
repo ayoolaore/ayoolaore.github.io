@@ -8,13 +8,16 @@
   }
 
 #project_title {
-    display: flex;
-    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent element */
+    display: flex; /* Align the image and text */
+    align-items: center; /* Center align the items */
     margin: 0;
     color: #fff;
     font-size: 42px;
     font-weight: 700;
     text-shadow: #111 0px 0px 10px;
+    white-space: white-space-trim; /* Prevent text wrapping */
   }
   
   #project_title img {
@@ -24,7 +27,14 @@
     height: 100px; /* Adjust the height as needed */
   }
 
-#main_nav {
+  #project_title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent element */
+    display: flex; /* Align the image and text */
+    align-items: center; /* Center align the items */
+  }
+
+  #main_nav {
     margin-top: 20px;
   }
   
