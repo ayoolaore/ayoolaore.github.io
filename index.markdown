@@ -51,7 +51,7 @@ title: Work history
     • Worked on migrating SIEM to SumoLogic.
     • Led the management of EDR services.
 
-#### INFRASTRUCTURE ANALYST (Payworks)
+#### Infrastructure Analyst (Payworks)
     Toronto, ON- SaaS company providing payroll services Canada wide.
     • Maintained daily operation of companywide complex infrastructure.
     • Worked on L2 and L3 physical and logical networking.
@@ -60,7 +60,7 @@ title: Work history
     • Implemented Ansible automation for network devices.
     • Supported .Net web development, in highly available clusters.
 
-#### NETWORK SYSTEMS ANALYST
+#### Network Systems Analsyt
     Winnipeg, MB
 
     
