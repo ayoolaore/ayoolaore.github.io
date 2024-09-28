@@ -22,7 +22,7 @@ title: Ayoola N | Systems Engineer
 email: ayoola.njoku@outlook.com
 role: Systems Engineer
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal blog. I write about software engineering, cloud computing, and other tech-related topics.
+  Welcome to my personal blog. I write about software engineering, cloud computing, and other tech-related topics. 
 domain: ayoolaore.github.io
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://ayoolaore.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -33,10 +33,10 @@ avatar: 'assets/images/profile.PNG'
 github: [metadata]
 # Build settings
 # theme: jekyll-theme-minimal
-theme: jekyll-theme-slate
+# theme: jekyll-theme-slate
 color_theme: auto  # auto, dark, light
 markdown: kramdown
-# remote_theme: pages-themes/slate@v0.2.0
+remote_theme: pages-themes/slate@v0.2.0
 # Navigation
 # nav:
 #   - name: "Home"
@@ -49,6 +49,7 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme 
   - jekyll-seo-tag
+  - jemoji
 
 
 # Exclude from processing.
