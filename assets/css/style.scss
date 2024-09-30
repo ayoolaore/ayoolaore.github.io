@@ -63,3 +63,14 @@
 #footer_wrap .inner p a img {
     margin-right: 10px; /* Adjust the margin as needed */
   }
+
+#main_content_wrap {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh; /* Ensure it takes at least the full viewport height */
+}
+
+#main_content {
+text-align: justify; /* Center text inside the content */
+}
