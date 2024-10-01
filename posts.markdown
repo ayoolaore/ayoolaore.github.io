@@ -5,9 +5,5 @@ layout: default
 title: Posts
 permalink: /posts/
 ---
-
-[Latest Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
-
-[Some Architecture Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
-
-[Some System Design Post](/_posts/2024-09-16-welcome-to-jekyll.markdown)
+## Blog Posts 
+- [Using Pulumi to Deploy micorservices to AWS](/_posts/2024-09-16-pulumi-github-actions-aws-ecs.markdown)

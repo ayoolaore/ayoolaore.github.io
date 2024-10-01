@@ -74,3 +74,28 @@ min-height: 100vh; /* Ensure it takes at least the full viewport height */
 #main_content {
 text-align: justify; /* Center text inside the content */
 }
+
+/* Style for the code block container */
+.code-container {
+    position: relative;
+    padding-top: 20px; /* Adjust padding to avoid overlap with the button */
+  }
+  
+  /* Style for the copy button */
+  .btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #5c5c5c;
+    border: 1px solid #292929;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Style for the copy button icon */
+  .btn img {
+    margin: 0;
+  }

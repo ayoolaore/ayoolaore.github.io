@@ -1,3 +1,8 @@
+---
+
+comments: true
+---
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
@@ -10,6 +15,8 @@
 {% seo %}
     {% include head-custom.html %}
   </head>
+
+ 
 
   <body>
 
@@ -50,7 +57,7 @@
           {% if site.github.is_project_page %}
           <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
           {% endif %}
-          <p>Ayoola N</p> 
+          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
           <p>
               <a href="https://github.com/{{site.github_username}}" target="_blank">
                 <img src="{{ '/assets/images/github-mark-white.svg' | relative_url }}" alt="GitHub" style="width: 24px; height: 24px;">
@@ -59,10 +66,39 @@
                 <img src="{{ '/assets/images/twitter-logo.svg' | relative_url }}" alt="Twitter" style="width: 24px; height: 24px;">
               </a>
               <a href="mailto:ayoola.njoku@outlook.com" target="_blank">
-                <img src="{{ '/assets/images/mail2.svg' | relative_url }}" alt="Mail" style="width: 24px; height: 24px;">
+                  <img src="{{ '/assets/images/mail3.svg' | relative_url }}" alt="Mail" style="width: 24px; height: 24px;">
+                </a>
+              <a href="https://www.linkedin.com/in/ayoola-njoku/" target="_blank">
+              <img src="{{ '/assets/images/linkedin.svg' | relative_url }}" alt="linkedin" style="width: 24px; height: 24px;">
               </a>
             </p>
         </footer>
-      </div>
+
+      {% if page.content contains "code" %}
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Get all <code> elements
+      var allCodeBlocksElements = $("code");
+
+      allCodeBlocksElements.each(function (i) {
+        // Wrap the code block in a container
+        $(this).wrap('<div class="code-container"></div>');
+
+        // Add a unique ID to each code block
+        var currentId = "codeblock" + (i + 1);
+        $(this).attr('id', currentId);
+
+        // Create the copy button
+        var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/copy.svg" width="1" alt="Copy to clipboard"></button>';
+        $(this).parent().append(clipButton);
+      });
+
+      // Initialize Clipboard.js
+      new Clipboard('.btn');
+    });
+  </script>
+  {% endif %}
   </body>
 </html>
