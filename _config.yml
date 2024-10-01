@@ -38,6 +38,7 @@ github: [metadata]
 color_theme: dark  # auto, dark, light
 markdown: kramdown
 remote_theme: pages-themes/slate@v0.2.0
+google_analytics: G-CJCBNQR2F3
 # Navigation
 # nav:
 #   - name: "Home"

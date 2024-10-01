@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 Hi I'm Ayoola, I talk a lot about technology and science in general. Topics I've spent time learning about lately include theoritical computing, artificial intelligence,  web development, open-banking, quantum computing and a bit of physics.
-Physics, because I believe its the topic that truly ties it all together. 
+Physics, because I believe its the topic that truly ties it all together. :rocket:
 
 With flair and passion for technology, I've been lucky enough to work across multiple technology stacks in areas that concern web development programming, on-prem networking, security, datalakes. 
 
