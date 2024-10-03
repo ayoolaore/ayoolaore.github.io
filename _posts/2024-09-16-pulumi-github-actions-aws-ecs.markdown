@@ -2,7 +2,7 @@
 layout: post
 title: "pulumi-github-actions-aws-ecs"
 date: 2024-09-16 13:19:24 -0400
-categories: pulumi ecs github-actions
+categories: devops
 ---
 
 ## Introduction
@@ -22,12 +22,14 @@ First, you need to install Pulumi and set up your AWS credentials.
     ```bash
     aws configure
     ```
+  [Details on aws cli can be found here](https://aws.amazon.com/cli/)
 
 3. Create a new Pulumi project:
     ```bash
     pulumi new aws-typescript
     ```
-
+  Pulumi allows you to have multiple stacks that can be saved to the same sate file. 
+  [See details on pulumi stack here ](https://www.pulumi.com/docs/iac/concepts/stacks/)
 ## Defining the Microservice
 
 Next, define your microservice application in Pulumi. Here is an example of how to define an ECS cluster and a Fargate service using TypeScript:
@@ -78,6 +80,8 @@ const service = new aws.ecs.Service("my-service", {
 Deploy the microservice to ECS using Pulumi:
 
 ```
+pulumi stack init app-dev
+pulumi stack select app-dev
 pulumi preview --diff
 pulumi up
 ```
