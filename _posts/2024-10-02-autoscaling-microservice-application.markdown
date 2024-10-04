@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "autoscaling-microservice-application"
 date: 2024-10-02 13:19:24 -0400
 categories: devops
@@ -67,73 +67,18 @@ Our current vertical scale:
 | app1                     | V3                   | 1                             | 67.4          | 628 ms     | Average   | 37/19        |
 | app2                     | V3                   | 1                             | 11.8          | 1.3 s      | Average   | 17/22        |
 | app3                     | V3                   | 1                             | 15            | 11 ms      | Average   | 16/16        |
-| app4                     | V3                   | 1                             | 50            | 7ms        | Average   | 11/16.0      |
-| app5                     | V5                   | 1                             | 73            | 419 ms     | Average   | 12/12.0      |
-| app6                     | V7                   | 1                             | 50            | 300 ms     | Average   | 11/6.0       |
-| app7                     | V3                   | 1                             | 50            | 218 ms     | Average   | 21/20.0      |
-| app8                     | V3                   | 1                             | 10            | 87 ms      | Average   | 8.21/15      |
 
-Note: 
-app4, app8, app6, app5 are vertically overprovisioned based on this table.
 
 
 ### Metric source for autoscaling:
 
-Options discussed: 
-#### Default cloudwatch metrics
+| Approach                                      | Pros                                                                                       | Cons                                                                                                     |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **Default CloudWatch Metrics**                | - Minimal setup/configuration<br>- Create alarms based off existing metrics<br>- Compute resources are collected by default. | - No application logs sent directly to CloudWatch.<br>- Unable to use ALB latency as not all services sit behind an ALB. |
+| **Use KPI Dashboard Metrics**                 | - Application data is collected in Datadog by default.<br>- KPI metrics are readily available.<br>- Pulumi state always up-to-date. | - Could involve a lot of logic building.<br>- Additional overhead maintaining webhooks and actions.       |
+| **Datadog and EventBridge Integration**       | - Application data is collected in Datadog by default.<br>- KPI metrics are readily available.<br>- Less overhead than using KPI dashboard metrics, integration is by provider. | - Involves coupling of AWS services, causing possible maintenance overhead.                               |
 
-This would entail correlating the default cloudwatch metrics with application metrics we see in KPI Dashboard 
 
-**Pros:**
-
-- Minimal setup/configuration
-- create alarms based off existing metrics
-- Compute resources are collected by default. 
-
-**Cons:**
-
-- There are no application logs sent directly to cloudwatch. 
-- Unable to use application load balancer (alb) latency as not all  services sit behind an alb. 
-
-#### Use KPI dashboard metrics
-
-Involves webhooks and github actions. This approach could also take advantage of deploying with pulumi. 
-
-**Pros:**
-
-- Application data is collected in datadog by default. 
-- KPI metrics are readily available. 
-- Pulumi state always up-to-date
-
-**Cons:**
-
-- Could involve a lot of logic building
-- Additional overhead maintaining webhooks and actions. 
-
-#### Datadog and EventBridge integration
-
-This is further improvement to 2. With Datadog’s Event Bridge out of box integration. 
-Pros: 
-
-- Application data is collected in datadog by default. 
-- KPI metrics are readily available.
-- Less overhead than 2, integration is by provider. 
-
-**Cons:**
-
-- Involves coupling of aws services, causing possible maintenance overhead. 
-
-#### Pass application metric as custom metric to cloudwatch.
-
-Involves code changes to make app logs show up in cloudwatch
-
-**Pros:**
-- Removes the need to route through Datadog. 
-- No use of eventbridge. 
-
-**Cons**
-- Creates redundant logging
-- Additional effort may be required to extrapolate trace latency information. 
 
 Methods I leaned towards:
 
@@ -143,56 +88,27 @@ Option 3 - Datadog and Eventbridge Integration for latency.
 
 ### Scaling policies (using a combination):
 
-Target 
-Step
-Scheduled
 
 
-#### Step:
+| Approach  | Pros                                                                                                           | Cons                                                                                                           |
+|-----------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| **Scheduled** | - Easy to set up<br>- Guarantees scale events                                                               | - Assumes to know when we get the most and least traffic<br>- Will not respond to load increase outside of assumed time. |
+| **Step**      | - Ability to control resources at a granular level.<br>- Predictable behavior to avoid over scaling.<br>- Customize cool-down periods to avoid flapping.<br>- Cost efficient once vertical scales have been identified. | - Can get complex especially when using multiple metrics.<br>- Slower response to sudden changes, can lead to underperformance for some time.<br>- Limited to predefined scenarios, not as automated as target tracking. |
+| **Target**    | - Simple, with no need for manual tuning.<br>- Adaptive and responsive.<br>- Automatic overscaling prevention; AWS reduces scale actions when metric is close to target.<br>- Less overhead. | - No fine-grained control, AWS determines the amount of resources needed.<br>- Could result in higher costs than wanted based on AWS’s determinants. |
 
-**Pros**:
-- Ability to control resources at a granular level. 
-- Predictable behavior to avoid over scaling.
-- Customize cool-down periods to avoid flapping.
-- Cost efficient once vertical scales have been identified. 
-
-**Cons**: 
-- Can get complex especially when using multiple metrics. 
-- Slower response to sudden changes, can lead to underperformance for sometime 
-- Limited to predefined scenarios, not as automated as target tracking. 
-
-#### Target: 
-
-**Pros:**
-- Simple , with no need for manual tuning 
-- Adaptive and responsive 
-- Automatic overscaling prevention; aws reduces scale actions when metric is close to target. 
-- Less overhead 
-**Cons:**
-- No fine grained control, aws determines the amount of resources needed 
-- Could result in higher costs than wanted based off aws’s determinants 
-
-#### Scheduled:
-**Pros:**
-- Easy to set up
-- Guarantees scale events 
-
-**Cons:**
-- Assumes to know when we get the most and least traffic 
-- Will not respond to load increase outside of assumed time. 
 
 ### Horizontal Scaling Implementation 
 
 Sale horizontally based on : 
 
-#### Step Scaling
+##### Step Scaling
 
 **Latency**:
 
 Horizontal scaling based on latency is likely to cause flapping. But that is okay, and because we want to almost always react to increased or decreased load. 
 And we know load changes correlate highly with latency. See snapshots below. 
 
-#### Target tracking
+##### Target tracking
 
 Less overhead, set a target value and scaling is automated. 
 

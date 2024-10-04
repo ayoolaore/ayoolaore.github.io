@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "pulumi-github-actions-aws-ecs"
 date: 2024-09-16 13:19:24 -0400
 categories: devops
