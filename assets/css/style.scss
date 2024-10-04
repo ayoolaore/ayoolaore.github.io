@@ -137,7 +137,9 @@ text-align: justify; /* Center text inside the content */
     .container {
         width: 95%;
         padding: 10px;
+        padding-top: 10px;
     }
+    
 
     h1 {
         font-size: 1.8em;
@@ -165,6 +167,18 @@ text-align: justify; /* Center text inside the content */
         padding: 10px;
         text-align: left;
     }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  #header {
+    margin-bottom: 10px; /* Reduced margin for mobile */
+  }
+
+  .main_content_wrap {
+    margin-top: 10px; /* Reduced margin for mobile */
+    padding-top: 10px; /* Reduced padding for mobile */
+  }
 }
 
 @media (max-width: 480px) {
