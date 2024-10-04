@@ -20,6 +20,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
+#header_wrap {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 10px;
+}
 #header_wrap .inner {
     padding: 50px 10px 30px 10px;
   }
@@ -85,11 +90,21 @@ h1, h2, h3, h4, h5, h6 {
 display: flex;
 justify-content: center;
 align-items: center;
+// margin-top: 0.5px; /* Reduced margin to decrease the gap */
+padding-top: 10px; /* Adjust padding if necessary */
 min-height: 100vh; /* Ensure it takes at least the full viewport height */
 }
 
 #main_content {
+margin-top: 10px; /* Reduced margin to decrease the gap */
+padding-top: 10px; /* Adjust padding if necessary */
 text-align: justify; /* Center text inside the content */
+}
+
+/* Adjust the main body section */
+#main_body {
+  margin-top: 10px; /* Reduced margin to decrease the gap */
+  padding-top: 10px; /* Adjust padding if necessary */
 }
 
 /* Style for the code block container */
