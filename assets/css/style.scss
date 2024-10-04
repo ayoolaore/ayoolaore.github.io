@@ -3,6 +3,23 @@
 
 @import "{{ site.theme }}";
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
 #header_wrap .inner {
     padding: 50px 10px 30px 10px;
   }
@@ -99,3 +116,60 @@ text-align: justify; /* Center text inside the content */
   .btn img {
     margin: 0;
   }
+
+  /* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
