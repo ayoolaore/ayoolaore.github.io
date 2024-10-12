@@ -1,13 +1,18 @@
 ---
 ---
-
 @import "{{ site.theme }}";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .container {
@@ -136,10 +141,11 @@ text-align: justify; /* Center text inside the content */
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        // padding: 10px;
+        padding: 10px;
         padding-top: 10px;
     }
     
+
     h1 {
         font-size: 1.8em;
     }
@@ -168,17 +174,7 @@ text-align: justify; /* Center text inside the content */
     }
 }
 
-/* Mobile styles */
-// @media (max-width: 600px) {
-//   #header {
-//     margin-bottom: 10px; /* Reduced margin for mobile */
-//   }
 
-//   .main_content_wrap {
-//     margin-top: 10px; /* Reduced margin for mobile */
-//     padding-top: 10px; /* Reduced padding for mobile */
-//   }
-// }
 
 @media (max-width: 480px) {
     h1 {
@@ -198,6 +194,6 @@ text-align: justify; /* Center text inside the content */
     }
 
     .container {
-        padding: 5px;
+        padding: 10px;
     }
 }
