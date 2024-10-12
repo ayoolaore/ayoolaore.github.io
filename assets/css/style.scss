@@ -145,19 +145,12 @@ text-align: justify; /* Center text inside the content */
         padding: 10px;
         padding-top: 10px;
     }
+
     .main_content {
       margin-top: 0px; /* Reduced margin to decrease the gap */
       padding-top: 10px; /* Adjust padding if necessary */
       text-align: justify; /* Center text inside the content */
-      }
-    .main_content_wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // margin-top: 0.5px; /* Reduced margin to decrease the gap */
-      padding-top: 10px; /* Adjust padding if necessary */
-      min-height: 100vh; /* Ensure it takes at least the full viewport height */
-      }
+    }
 
     h1 {
         font-size: 1.8em;
@@ -205,23 +198,13 @@ text-align: justify; /* Center text inside the content */
     p {
         font-size: 0.9em;
     }
-
-    .container {
-        margin: 0 auto;
-        padding: 10px;
-    }
-
     .main_content {
       margin-top: 0px; /* Reduced margin to decrease the gap */
       padding-top: 10px; /* Adjust padding if necessary */
       text-align: justify; /* Center text inside the content */
-      }
-    .main_content_wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // margin-top: 0.5px; /* Reduced margin to decrease the gap */
-      padding-top: 10px; /* Adjust padding if necessary */
-      min-height: 100vh; /* Ensure it takes at least the full viewport height */
-      }
+    }
+    .container {
+        margin: 0 auto;
+        padding: 10px;
+    }
 }
