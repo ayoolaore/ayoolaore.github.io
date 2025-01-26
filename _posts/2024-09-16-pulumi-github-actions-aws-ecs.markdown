@@ -74,6 +74,7 @@ const service = new aws.ecs.Service("my-service", {
 });
 
 ```
+Your ecs services would need other resources like networking, storage, laoadbalancers. These can also be done via pulumi. 
 
 ### Deploying to ECS
 
@@ -120,11 +121,11 @@ jobs:
         run: npm install
 
       - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
 
       - name: Deploy with Pulumi
         run: pulumi up --yes

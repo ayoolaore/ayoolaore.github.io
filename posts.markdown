@@ -14,6 +14,8 @@ permalink: /posts/
 
 - [Autoscaling a microservice application](/_posts/2024-10-02-autoscaling-microservice-application.markdown)
 
+- [Copy Objects from Azure to S3](/_posts/2025-01-24-copy-files-to-s3-python.md)
+
 
 ### Cloud
 
