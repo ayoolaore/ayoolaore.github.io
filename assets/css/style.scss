@@ -1,6 +1,6 @@
 ---
 ---
-{@import "{{ site.theme }}";
+@import "{{ site.theme }}";
 
 *,
 *::before,
@@ -207,5 +207,4 @@ text-align: justify; /* Center text inside the content */
         margin: 0 auto;
         padding: 10px;
     }
-}
 }
