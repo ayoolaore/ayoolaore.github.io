@@ -40,13 +40,13 @@ markdown: kramdown
 remote_theme: pages-themes/midnight@v0.2.0
 google_analytics: G-CJCBNQR2F3
 # Navigation
-nav:
-  - name: "Home"
-    link: "/"
-  - name: "About"
-    link: "/about/"
-  - name: "Blog"
-    link: "/blog/"
+# nav:
+#   - name: "Home"
+#     link: "/"
+#   - name: "About"
+#     link: "/about/"
+#   - name: "Blog"
+#     link: "/blog/"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
