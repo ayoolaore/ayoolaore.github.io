@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /
 ---
 
 Hi I'm Ayoola, I talk a lot about technology and science in general. Topics I've spent time learning about lately include theoritical computing, artificial intelligence,  web development, open-banking, quantum computing and a bit of physics.

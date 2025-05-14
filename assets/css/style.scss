@@ -242,44 +242,6 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
-@media (max-width: 480px) {
-    .post-list li {
-        padding-left: 1rem;
-        line-height: 1.4;
-    }
-}
-
-/* Footer */
-#footer_wrap {
-    background-color: #222;
-    color: #ccc;
-    padding: 20px 0;
-    text-align: center;
-}
-
-#footer_wrap .inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-#footer_wrap a {
-    color: #ccc;
-    text-decoration: none;
-}
-
-#footer_wrap a:hover {
-    color: #fff;
-}
-
-#footer_wrap .inner p a img {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-}
-
-/* Responsive styles */
 @media (max-width: 768px) {
     #header_wrap .inner {
         padding: 15px;
@@ -294,10 +256,33 @@ h1, h2, h3, h4, h5, h6 {
         height: 32px;
     }
     
+    #main_nav {
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+        margin-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
     #main_nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
+    }
+    
+    #main_nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    #main_nav ul li a {
+        display: block;
+        padding: 8px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
     }
     
     #main_content {
@@ -333,17 +318,17 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     #project_title {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     #project_title img {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
     }
     
     #project_tagline {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     #main_nav {
@@ -351,13 +336,27 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     #main_nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #main_nav ul li {
+        flex: 1 0 33%;
+        margin-bottom: 5px;
     }
     
     #main_nav ul li a {
-        font-size: 15px;
+        padding: 8px 5px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+    
+    #main_nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
     #main_content {
