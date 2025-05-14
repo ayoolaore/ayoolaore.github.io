@@ -1,22 +1,24 @@
----
----
-@import "{{ site.theme }}";
+/* Commenting out the invalid import line causing syntax issues */
+/* @import "{{ site.theme }}"; */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal overflow */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    color: #333; /* Darker text for readability */
 }
 
 .container {
-    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -29,10 +31,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #333;
     color: #fff;
     padding: 20px 10px;
+    text-align: center;
 }
 #header_wrap .inner {
     padding: 50px 10px 30px 10px;
-  }
+}
 
 #project_title {
     text-decoration: none; /* Remove underline */
@@ -45,81 +48,97 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     text-shadow: #111 0px 0px 10px;
     white-space: white-space-trim; /* Prevent text wrapping */
-  }
-  
-  #project_title img {
-  
+}
+
+#project_title img {
     margin-right: 10px; /* Adjust the margin as needed */
     width: 100px; /* Adjust the width as needed */
     height: 100px; /* Adjust the height as needed */
-  }
+}
 
-  #project_title a {
+#project_title a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit the color from the parent element */
     display: flex; /* Align the image and text */
     align-items: center; /* Center align the items */
-  }
+}
 
-  #main_nav {
+#main_nav {
     margin-top: 20px;
-  }
-  
-  #main_nav ul {
+}
+
+#main_nav ul {
     list-style: none;
     padding: 0;
     display: flex;
+    justify-content: center;
     gap: 20px;
-  }
-  
-  #main_nav ul li {
+}
+
+#main_nav ul li {
     display: inline;
-  }
-  
-  #main_nav ul li a {
+}
+
+#main_nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-  }
-  
-  #main_nav ul li a:hover {
+}
+
+#main_nav ul li a:hover {
     text-decoration: underline;
-  }
+}
+
+#footer_wrap {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+#footer_wrap a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#footer_wrap a:hover {
+    color: #fff;
+}
 
 #footer_wrap .inner p a img {
     margin-right: 10px; /* Adjust the margin as needed */
-  }
+}
 
 #main_content_wrap {
-display: flex;
-justify-content: center;
-align-items: center;
-// margin-top: 0.5px; /* Reduced margin to decrease the gap */
-padding-top: 10px; /* Adjust padding if necessary */
-min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 0.5px; /* Reduced margin to decrease the gap */
+    padding-top: 10px; /* Adjust padding if necessary */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
 }
 
 #main_content {
-margin-top: 0px; /* Reduced margin to decrease the gap */
-padding-top: 10px; /* Adjust padding if necessary */
-text-align: justify; /* Center text inside the content */
+    margin-top: 0px; /* Reduced margin to decrease the gap */
+    padding-top: 10px; /* Adjust padding if necessary */
+    text-align: justify; /* Center text inside the content */
 }
 
 /* Adjust the main body section */
 #main_body {
-  margin-top: 10px; /* Reduced margin to decrease the gap */
-  padding-top: 10px; /* Adjust padding if necessary */
+    margin-top: 10px; /* Reduced margin to decrease the gap */
+    padding-top: 10px; /* Adjust padding if necessary */
 }
 
 /* Style for the code block container */
 .code-container {
     position: relative;
     padding-top: 20px; /* Adjust padding to avoid overlap with the button */
-  }
-  
-  /* Style for the copy button */
-  .btn {
+}
+
+/* Style for the copy button */
+.btn {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -130,26 +149,23 @@ text-align: justify; /* Center text inside the content */
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-  }
-  
-  /* Style for the copy button icon */
-  .btn img {
-    margin: 0;
-  }
+}
 
-  /* Responsive styles */
+/* Style for the copy button icon */
+.btn img {
+    margin: 0;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .container {
-        margin: 0 auto;
         width: 95%;
         padding: 10px;
-        padding-top: 10px;
     }
 
-    .main_content {
-      margin-top: 0px; /* Reduced margin to decrease the gap */
-      padding-top: 10px; /* Adjust padding if necessary */
-      text-align: justify; /* Center text inside the content */
+    #main_nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 
     h1 {
@@ -180,8 +196,6 @@ text-align: justify; /* Center text inside the content */
     }
 }
 
-
-
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5em;
@@ -198,11 +212,18 @@ text-align: justify; /* Center text inside the content */
     p {
         font-size: 0.9em;
     }
-    .main_content {
-      margin-top: 0px; /* Reduced margin to decrease the gap */
-      padding-top: 10px; /* Adjust padding if necessary */
-      text-align: justify; /* Center text inside the content */
+
+    #main_nav ul {
+        flex-direction: column;
+        gap: 5px;
     }
+
+    .main_content {
+        margin-top: 0px; /* Reduced margin to decrease the gap */
+        padding-top: 10px; /* Adjust padding if necessary */
+        text-align: justify; /* Center text inside the content */
+    }
+
     .container {
         margin: 0 auto;
         padding: 10px;
