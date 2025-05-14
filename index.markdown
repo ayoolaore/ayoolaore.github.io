@@ -1,14 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home 
-title: Work history
+layout: default
+title: Home
+redirect_to: /
 ---
 
-<div class="resume-section">
-    <h3 class="job-title">DevOps Engineer (Harvard University)</h3>
-    <div class="job-location">Boston, MA</div>
-    <p class="job-description">Building a modernized learning experience to be used by Harvard and other subscribing schools.</p>
+<script>
+  window.location.href = "/";
+</script>
+
+<p>If you are not redirected automatically, please <a href="/">click here</a>.</p>
     <ul class="job-responsibilities">
         <li>Worked as one of two DevOps engineers that ensured all of our processes were automated.</li>
         <li>Built CI/CD release pipelines leveraging GitHub actions.</li>
