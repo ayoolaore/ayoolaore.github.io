@@ -38,22 +38,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #project_title {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the color from the parent element */
     display: flex; /* Align the image and text */
-    align-items: center; /* Center align the items */
+    align-items: center; /* Center align the items vertically */
     margin: 0;
     color: #fff;
-    font-size: 42px;
+    font-size: 24px; /* Reduced font size for better balance */
     font-weight: 700;
     text-shadow: #111 0px 0px 10px;
-    white-space: white-space-trim; /* Prevent text wrapping */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 #project_title img {
-    margin-right: 10px; /* Adjust the margin as needed */
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
+    margin-right: 10px; /* Space between image and text */
+    width: 50px; /* Adjusted width for better proportion */
+    height: 50px; /* Adjusted height for better proportion */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
 }
 
 #project_title a {
