@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,20 +32,27 @@
           {% if site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
           {% endif %}
-          <h1 id="project_title"> 
-            <a href = "{{ site.url | relative_url }}" > 
-            <img src="{{ site.avatar | relative_url }}" alt="{{ site.title | default: site.github.repository_name }}" >
-            {{ site.title | default: site.github.repository_name }}   </h1></a>
-          <!-- <h3 id="project_tagline">{{ site.role | default: site.github.project_tagline }}</h3> -->
-          <h3 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h3>
-          
-            <nav id="main_nav">
-                <ul>
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                <li><a href="{{ '/about' | relative_url }}">About</a></li>
-                <li><a href="{{ '/posts' | relative_url }}">Posts</a></li>
-                </ul>
-            </nav>
+          <h1 id="project_title">
+            <a href="{{ site.url | relative_url }}">
+              <img src="{{ site.avatar | relative_url }}" alt="{{ site.title | default: site.github.repository_name }}">
+              {{ site.title | default: site.github.repository_name }}
+            </a>
+          </h1>
+
+          <nav id="main_nav">
+            <ul>
+              <li><a href="{{ '/' | relative_url }}">Home</a></li>
+              <li><a href="{{ '/posts' | relative_url }}">Posts</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme" role="button" tabindex="0">
+              <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+              </svg>
+              <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </nav>
           {% if site.show_downloads %}
             <section id="downloads">
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
